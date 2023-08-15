@@ -1,0 +1,31 @@
+/* 主题颜色 变量 */
+
+:root {
+  /*----重新定义 element-plus 变量值----*/
+  // --el-color-primary: rgb(60, 0, 255);
+
+  --el-table-header-fill-color: #f5f7fa;
+  --el-table-header-text-color: #4e5969;
+
+  --el-border-light-color: #ebeee5;
+
+  --process-bg-color: #f2f3f5;
+  --process-text-default-color: #1d2129;
+  --process-disabled-text-color: #86909c;
+
+  --process-el-menu-active-text-color: #409eff; // 菜单选中字体颜色
+  --process-el-menu-color: #bfcbd9; // 菜单字体颜色
+  --process-el-menu-background: #00162f; // 菜单背景
+  --process-menu-background: #001629;
+  --process-sub-menu-background: #000c17;
+  --process-sub-menu-hover: #001528;
+  --process-menu-color-active: #f4f4f5;
+
+  /*----其它自定义变量 ----*/
+  --box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* 扩散型阴影：shadow-box */
+}
+
+/*  ======== 暗黑模式颜色 ========  */
+.dark {
+  --el-color-primary: theme('colors.rose.800');
+}

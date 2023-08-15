@@ -1,0 +1,98 @@
+{
+  "name": "confirmsheet-frontend",
+  "version": "1.0.0",
+  "description": "确认表格配置平台",
+  "scripts": {
+    "dev": "vite --force",
+    "dev:local": "vite --mode localmock",
+    "build:dev": "vite build --mode productiondev",
+    "build:qa": "vite build --mode productionqa",
+    "build:prod": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    "lint-staged": "lint-staged",
+    "lint": "npm run lint:eslint && npm run lint:prettier && npm run stylelint",
+    "lint:js": "eslint --ext .vue,.js,.jsx,.ts,.tsx ./src",
+    "lint:fix": "eslint --fix --ext .vue,.js,.jsx,.ts,.tsx ./src ",
+    "lint:prettier": "prettier --write .",
+    "stylelint": "stylelint **/*.{vue,less,postcss,css,scss}",
+    "stylelint:fix": "stylelint --fix  ./src/**/*.{vue,less,postcss,css,scss}",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@vueuse/core": "^10.1.2",
+    "axios": "^1.4.0",
+    "dayjs": "^1.11.8",
+    "element-plus": "^2.3.6",
+    "js-cookie": "^3.0.5",
+    "lodash-es": "^4.17.21",
+    "lucide-vue-next": "^0.241.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.3",
+    "vue": "^3.3.4",
+    "vue-request": "^2.0.3",
+    "vue-router": "^4.2.2",
+    "vue-synth": "^0.0.5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@types/node": "^20.2.5",
+    "@types/nprogress": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vitest/coverage-v8": "^0.32.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.14.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.2.2",
+    "mockjs": "^1.1.0",
+    "postcss": "^8.4.24",
+    "postcss-html": "^1.5.0",
+    "postcss-scss": "^4.0.6",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "sass": "^1.63.2",
+    "stylelint": "^14.5.3",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.0.1",
+    "tailwindcss": "^3.3.2",
+    "terser": "^5.17.7",
+    "typescript": "^5.1.3",
+    "unplugin-auto-import": "^0.16.4",
+    "vite": "^4.3.9",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-mock": "^2.9.6",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vitest": "^0.32.0",
+    "vue-eslint-parser": "^9.3.0",
+    "vue-tsc": "^1.6.5"
+  },
+  "lint-staged": {
+    "*.{jsx,vue,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{scss,less,css,html,md}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "{!(package)*.json,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ]
+  }
+}

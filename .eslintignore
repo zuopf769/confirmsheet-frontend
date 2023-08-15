@@ -1,0 +1,22 @@
+*.sh
+node_modules
+lib
+*.md
+*.scss
+*.woff
+*.ttf
+.vscode
+.idea
+dist/
+docs/
+# mock/
+public/
+bin/
+build/
+config/
+index.html
+src/assets
+*.cssr.js
+*.cssr.ts
+.npmrc
+*.json

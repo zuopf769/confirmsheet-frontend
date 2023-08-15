@@ -1,0 +1,214 @@
+/* 深色模式样式
+------------------------------- */
+[data-theme='dark'] {
+  // 变量(自定义时，只需修改这里的值)
+  --process-bg-main: #1f1f1f;
+  --process-color-white: #ffffff;
+  --process-color-disabled: #191919;
+  --process-color-bar: #dadada;
+  --process-color-primary: #303030;
+  --process-border-color: #424242;
+  --process-border-black: #333333;
+  --process-border-columns: #2a2a2a;
+  --process-color-seting: #505050;
+  --process-text-color-regular: #9b9da1;
+  --process-text-color-placeholder: #7a7a7a;
+  --process-color-hover: #3c3c3c;
+  --process-color-hover-rgba: #000;
+
+  // element plus
+  --el-color-white: var(--process-color-disabled) !important;
+  --el-text-color-primary: var(--process-color-bar) !important;
+  --el-border-color-base: var(--process-border-black) !important;
+  --el-border-color-light: var(--process-border-black) !important;
+  --el-text-color-regular: var(--process-text-color-regular) !important;
+  --el-bg-color: var(--process-color-hover-rgba) !important;
+  --el-color-success-lighter: var(--process-color-primary) !important;
+  --el-color-warning-lighter: var(--process-color-primary) !important;
+  --el-color-danger-lighter: var(--process-color-primary) !important;
+  --el-color-primary: var(--process-color-primary) !important;
+  --el-color-primary-lighter: var(--process-color-primary) !important;
+  --el-color-primary-light-3: var(--process-color-hover) !important;
+  --el-color-primary-light-9: var(--process-color-hover) !important;
+  --el-text-color-disabled-base: var(--el-color-primary) !important;
+  --el-border-color-lighter: var(--process-border-black) !important;
+  --el-text-color-placeholder: var(--process-text-color-placeholder) !important;
+  --el-disabled-bg-color: var(--process-color-disabled) !important;
+  --el-fill-base: var(--process-color-white) !important;
+
+  // theme.scss中  root 变量
+  --el-table-header-fill-color: var(--process-bg-main) !important;
+  --el-table-header-text-color: var(--process-text-color-regular) !important;
+
+  --el-border-light-color: var(--process-border-black) !important;
+
+  --process-text-default-color: #1d2129;
+  --process-disabled-text-color: #86909c;
+
+  --process-el-menu-active-text-color: var(--process-color-primary) !important; // 菜单选中字体颜色
+
+  // button
+  .el-button {
+    &:hover {
+      border-color: var(--process-border-color) !important;
+    }
+  }
+  .el-button--primary,
+  .el-button--info,
+  .el-button--danger,
+  .el-button--success,
+  .el-button--warning {
+    --el-button-text-color: var(--process-color-white) !important;
+    --el-button-hover-text-color: var(--process-color-white) !important;
+    --el-button-disabled-text-color: var(--process-color-white) !important;
+    &:hover {
+      border-color: var(--el-button-hover-border-color, var(--el-button-hover-bg-color)) !important;
+    }
+  }
+
+  // drawer
+  .el-divider__text {
+    background-color: var(--el-color-white) !important;
+  }
+  .el-drawer {
+    border-left: 1px solid var(--process-border-color-light) !important;
+  }
+
+  // tabs
+  .el-tabs--border-card {
+    background-color: var(--el-color-white) !important;
+  }
+  .el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+    background: var(--process-color-primary-lighter);
+  }
+
+  // alert / notice-bar
+  .home-card-item {
+    border: 1px solid var(--process-border-color-light) !important;
+  }
+  .el-alert,
+  .notice-bar {
+    border: 1px solid var(--process-border-color) !important;
+    background-color: var(--process-color-disabled) !important;
+  }
+
+  // menu
+  .layout-aside {
+    border-right: 1px solid var(--process-border-color-light) !important;
+  }
+
+  // colorPicker
+  .el-color-picker__mask {
+    background: unset !important;
+  }
+  .el-color-picker__trigger {
+    border: 1px solid var(--process-border-color-light) !important;
+  }
+
+  // popper / dropdown
+  .el-popper {
+    border: 1px solid var(--process-border-color) !important;
+    color: var(--el-text-color-primary) !important;
+    .el-popper__arrow:before {
+      background: var(--el-color-white) !important;
+      border: 1px solid var(--process-border-color);
+    }
+    a {
+      color: var(--el-text-color-primary) !important;
+    }
+  }
+  .el-popper,
+  .el-dropdown-menu {
+    background: var(--el-color-white) !important;
+  }
+  .el-dropdown-menu__item:hover:not(.is-disabled) {
+    background: var(--el-bg-color) !important;
+  }
+  .el-dropdown-menu__item.is-disabled {
+    font-weight: 700 !important;
+  }
+
+  // input
+  .el-input-group__append,
+  .el-input-group__prepend {
+    border: var(--el-input-border) !important;
+    border-right: none !important;
+    background: var(--process-color-disabled) !important;
+    border-left: 0 !important;
+  }
+  .el-input-number__decrease,
+  .el-input-number__increase {
+    background: var(--process-color-disabled) !important;
+  }
+
+  // tag
+  .el-select .el-select__tags .el-tag {
+    background-color: var(--next-bg-color) !important;
+  }
+
+  // pagination
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    color: var(--process-color-white) !important;
+  }
+  .el-pagination.is-background .btn-next,
+  .el-pagination.is-background .btn-prev,
+  .el-pagination.is-background .el-pager li {
+    background-color: var(--next-bg-color);
+  }
+
+  // radio
+  .el-radio-button:not(.is-active) .el-radio-button__inner {
+    border: 1px solid var(--process-border-color-light) !important;
+    border-left: 0 !important;
+  }
+  .el-radio-button.is-active .el-radio-button__inner {
+    color: var(--process-color-white) !important;
+  }
+
+  // countup
+  .countup-card-item-flex {
+    color: var(--el-text-color-primary) !important;
+  }
+
+  // editor
+  .editor-container {
+    .w-e-toolbar {
+      background: var(--el-color-white) !important;
+      border: 1px solid var(--process-border-color-light) !important;
+      .w-e-menu:hover {
+        background: var(--next-color-user-hover) !important;
+        i {
+          color: var(--el-text-color-primary) !important;
+        }
+      }
+    }
+    .w-e-text-container {
+      border: 1px solid var(--process-border-color-light) !important;
+      border-top: none !important;
+      .w-e-text {
+        background: var(--el-color-white) !important;
+      }
+    }
+  }
+
+  // date-picker
+  .el-picker-panel {
+    background: var(--el-color-white) !important;
+  }
+
+  // dialog
+  .el-dialog {
+    border: 1px solid var(--el-border-color-lighter);
+    .el-dialog__header {
+      color: var(--el-text-color-primary) !important;
+    }
+  }
+
+  // columns
+  .layout-columns-aside ul .layout-columns-active {
+    color: var(--process-color-white) !important;
+  }
+  .layout-columns-aside {
+    border-right: 1px solid var(--process-border-columns);
+  }
+}
