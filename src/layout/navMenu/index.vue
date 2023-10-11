@@ -4,7 +4,7 @@
       class="bottom-split-line flex h-[40px] items-center justify-center text-[16px] font-bold text-white"
       style="font-family: SourceHanSansCN-Bold"
     >
-      技术中台确认表格
+      技术中台电子表格
     </div>
     <el-scrollbar class="" wrap-class="scrollbar-wrapper">
       <el-menu

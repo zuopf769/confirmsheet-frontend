@@ -6,7 +6,7 @@ export let constantRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Root',
-    redirect: '/event-bus/app/integrate'
+    redirect: '/sheet/list'
   },
   {
     path: '/login',

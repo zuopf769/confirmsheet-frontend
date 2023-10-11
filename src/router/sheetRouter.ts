@@ -3,14 +3,21 @@ const sheetRoutes: Array<any> = [
     path: '/sheet',
     name: 'Sheet',
     component: () => import('@/layout/index.vue'),
-    meta: { title: '确认表格', icon: 'system' },
-    redirect: { name: 'Design' },
+    meta: { title: '表格', icon: 'system' },
+    redirect: { name: 'List' },
     children: [
       {
+        path: 'list',
+        component: () => import('@/views/list/index.vue'),
+        name: 'List',
+        meta: { title: '表格管理', icon: '' }
+      },
+      {
         path: 'design',
-        component: () => import('@/views/Design/index.vue'),
+        component: () => import('@/views/design/index.vue'),
         name: 'Design',
-        meta: { title: '设计表格', icon: '' }
+        hidden: true,
+        meta: { title: '表格设计', icon: '' }
       }
     ]
   }
