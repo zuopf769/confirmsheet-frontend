@@ -29,6 +29,7 @@
         <el-table-column label="操作" width="355" align="right">
           <template #default="scope">
             <el-button size="small" @click="handleEdit(scope)">编辑</el-button>
+            <el-button size="small" @click="handleCopy(scope)">复制</el-button>
             <el-button size="small" @click="handleDesign(scope)">设计</el-button>
             <el-button size="small" @click="gotoPreview(scope)">预览</el-button>
             <el-button size="small" type="danger" @click="handleDelete(scope)">删除</el-button>
@@ -93,6 +94,9 @@
 
   // 新增
   const handleAdd = () => {}
+
+  // 复制
+  const handleCopy = (scope) => {}
 
   // 编辑
   const handleEdit = (scope) => {}

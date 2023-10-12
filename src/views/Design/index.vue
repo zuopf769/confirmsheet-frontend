@@ -1,14 +1,13 @@
 <script lang="ts" setup>
-  import { useRouter, useRoute } from 'vue-router'
+  import { useRouter } from 'vue-router'
   import { useRouteQuery } from '@vueuse/router'
 
-  import { Edit, DocumentChecked, Back } from '@element-plus/icons-vue'
+  import { Plus, Edit, DocumentChecked, Back } from '@element-plus/icons-vue'
   import { defaultOptions as colDesignOptions } from '@/configs/colDesignOptions'
   import { defaultOptions as cellDesignOptions } from '@/configs/cellDesignOptions'
   import { Local } from '@/utils/storage'
 
   const router = useRouter()
-  const route = useRoute()
 
   const id = useRouteQuery('id')
 
@@ -43,12 +42,16 @@
   // 保存
   const handleSave = () => {
     const data = window.luckysheet.getAllSheets()
+    console.log('data', data)
     Local.set('sheet-data', JSON.stringify(data))
   }
 
+  // 保存为模板
+  const handleSaveTpl = () => {}
+
   // 跳转到预览测试填报
   const gotoPreview = () => {
-    window.open(`/preview/${id.value}`)
+    window.open(`/preview?id=${id.value}`)
   }
 
   // 返回
@@ -62,13 +65,13 @@
     <div class="toolbar-wrap">
       <el-button :icon="Back" class="mr-4" @click="goBack">返回</el-button>
       <el-button-group>
-        <!-- <el-button :icon="Plus" @click="addRow">添加记录</el-button> -->
         <!-- <el-button :icon="Setting">字段配置</el-button> -->
         <!-- <el-button :icon="Upload">上传</el-button> -->
         <!-- <el-button :icon="Download">下载</el-button> -->
         <el-button :icon="DocumentChecked" @click="handleSave">保存</el-button>
         <!-- <el-button :icon="Printer">打印</el-button> -->
         <el-button :icon="Edit" @click="gotoPreview">进入填报模式</el-button>
+        <el-button :icon="Plus" @click="handleSaveTpl">另存为模板</el-button>
       </el-button-group>
     </div>
     <div class="sheet-wrap">

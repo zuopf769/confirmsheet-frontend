@@ -3,9 +3,10 @@ export const defaultFillOptions = {
   title: '电子表格', // 设定表格名称
   lang: 'zh', // 设定表格语言
   designMode: false, // 设计态
-  isColumnMode: true, // 列维度表格
+  isColumnMode: false, // 列维度表格
   showtoolbar: false,
   showinfobar: false,
   sheetFormulaBar: false,
-  showsheetbar: false
+  showsheetbar: false,
+  data: []
 }

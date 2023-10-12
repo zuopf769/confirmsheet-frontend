@@ -13,6 +13,12 @@ const sheetRoutes: Array<any> = [
         meta: { title: '表格管理', icon: '' }
       },
       {
+        path: 'template',
+        component: () => import('@/views/template/index.vue'),
+        name: 'Template',
+        meta: { title: '模板管理', icon: '' }
+      },
+      {
         path: 'design',
         component: () => import('@/views/design/index.vue'),
         name: 'Design',
@@ -22,7 +28,7 @@ const sheetRoutes: Array<any> = [
     ]
   },
   {
-    path: '/preview/:id',
+    path: '/preview',
     name: 'Preview',
     component: () => import('@/layout/parentLayout.vue'),
     meta: { title: '电子表格填报', icon: 'system' },

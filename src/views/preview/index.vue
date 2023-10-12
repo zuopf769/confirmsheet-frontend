@@ -1,6 +1,10 @@
 <script lang="ts" setup>
+  import { useRouteQuery } from '@vueuse/router'
   import { Local } from '@/utils/storage'
-  import { defaultFillOptions } from '@/configs/defaultFillOptions'
+  import { defaultFillOptions as colFillDesignOptions } from '@/configs/colFillOptions'
+  import { defaultFillOptions as cellFillDesignOptions } from '@/configs/cellFillOptions'
+
+  const id = useRouteQuery('id')
 
   const hook = {
     cellMousedown: (cell, postion, sheet, ctx) => {
@@ -17,9 +21,15 @@
     }
   }
 
+  const defaultFillOptions = computed(() => {
+    return (id.value as any) === '1' ? colFillDesignOptions : cellFillDesignOptions
+  })
+
   const options = computed(() => {
     const data = JSON.parse(Local.get('sheet-data'))
-    return { ...defaultFillOptions, hook, data }
+    const config = { ...defaultFillOptions.value, hook }
+    config.data = data
+    return config
   })
 
   onMounted(() => {
