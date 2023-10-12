@@ -25,6 +25,7 @@
     "@element-plus/icons-vue": "^2.1.0",
     "@floating-ui/dom": "^1.5.1",
     "@vueuse/core": "^10.1.2",
+    "@vueuse/router": "^10.5.0",
     "axios": "^1.4.0",
     "dayjs": "^1.11.8",
     "element-plus": "^2.3.6",

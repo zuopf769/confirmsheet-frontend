@@ -98,9 +98,9 @@
   const handleEdit = (scope) => {}
 
   // 设计
-  const handleDesign = (scope) => {
-    console.log('xxxxx', scope)
-    router.push({ path: '/sheet/design', query: { id: '1111' } })
+  const handleDesign = ({ row }) => {
+    console.log(row)
+    router.push({ path: '/sheet/design', query: { id: row.id } })
   }
 
   // 预览

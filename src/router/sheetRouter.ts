@@ -20,6 +20,22 @@ const sheetRoutes: Array<any> = [
         meta: { title: '表格设计', icon: '', activeMenu: '/sheet/list' }
       }
     ]
+  },
+  {
+    path: '/preview/:id',
+    name: 'Preview',
+    component: () => import('@/layout/parentLayout.vue'),
+    meta: { title: '电子表格填报', icon: 'system' },
+    redirect: { name: 'Fill' },
+    hidden: true,
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/preview/index.vue'),
+        name: 'Fill',
+        meta: { title: '电子表格填报', icon: '' }
+      }
+    ]
   }
 ]
 

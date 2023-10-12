@@ -4,9 +4,9 @@ export const defaultOptions = {
   lang: 'zh', // 设定表格语言
   designMode: true, // 设计态
   isColumnMode: true, // 列维度表格
-  showinfobar: false,
-  showsheetbar: false,
-  enableAddRow: false,
+  showinfobar: false, // 顶部info条
+  showsheetbar: false, // 底部sheet条
+  enableAddRow: false, // 底部添加行按钮
   enableAddBackTop: false,
   data: [
     // 第一个工作表配置
