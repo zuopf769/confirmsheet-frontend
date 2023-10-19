@@ -21,7 +21,7 @@
       <el-button type="primary" icon="Plus" @click="handleAdd">新增</el-button>
     </div>
     <div class="table-list-container">
-      <el-table v-loading="loading" :data="sheetList" style="width: 100%" height="650">
+      <el-table v-loading="loading" :data="sheetList" style="width: 100%" height="560">
         <el-table-column label="ID" prop="id" />
         <el-table-column label="表格名称" prop="sheetName" />
         <el-table-column label="表格类型" prop="sheetType" />
@@ -51,12 +51,21 @@
       </div>
     </div>
   </div>
+  <SheetForm v-model:visible="formVisible" :mode="formModeRef"></SheetForm>
 </template>
 
 <script lang="ts" setup>
   import type { FormInstance } from 'element-plus'
-  import { sheetList as defaultList } from '@/configs/sheetList'
   import { useRouter } from 'vue-router'
+  import { useSheetListStore } from '@/store/sheetList'
+  import SheetForm from './Form/index.vue'
+
+  const sheetListStore = useSheetListStore()
+
+  const { sheetList } = storeToRefs(sheetListStore)
+
+  const formVisible = ref()
+  const formModeRef = ref()
 
   const router = useRouter()
 
@@ -80,8 +89,6 @@
   const queryFormRef = ref<FormInstance | undefined>()
   // 表格数据加载中
   const loading = ref(false)
-  // 表格数据
-  const sheetList = reactive(defaultList)
 
   // 查询按钮
   const onFormSubmit = () => {}
@@ -93,7 +100,10 @@
   }
 
   // 新增
-  const handleAdd = () => {}
+  const handleAdd = () => {
+    formVisible.value = true
+    formModeRef.value = 'ADD'
+  }
 
   // 复制
   const handleCopy = (scope) => {}

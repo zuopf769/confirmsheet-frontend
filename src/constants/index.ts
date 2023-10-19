@@ -4,6 +4,9 @@ dayjs.locale('zh-cn')
 export * from './event'
 export * from './source'
 
+// uuid prefix
+export const UUIP_PREFIX = 'sheet-'
+
 // modal弹窗标题类型
 export const TITLE_TYPES = {
   ADD: '新增',

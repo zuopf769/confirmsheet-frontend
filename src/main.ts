@@ -2,7 +2,8 @@ import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router/index'
-
+import elFormRenderer from '@sunwise/el-form-renderer-vue3'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // 先tailwindcss
 import './styles/index.scss'
@@ -31,12 +32,14 @@ const app = createApp(App)
 app.config.globalProperties.resetForm = resetForm
 
 const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
 app.use(router)
 app.use(pinia)
 app.use(ElementPlus)
+app.use(elFormRenderer)
 app.use(plugins)
 app.component('LucideIcon', LucideIcon)
 app.component('CollapseTitle', CollapseTitle)

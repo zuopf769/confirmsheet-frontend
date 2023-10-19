@@ -2,10 +2,10 @@
   "Vue3 SFC 代码结构一键生成": {
     "prefix": "Vue3 SFC",
     "body": [
-      "<script lang=\"ts\" setup></script>\n",
       "<template>",
       "\t<div class=\"comp-wrapper\">...</div>",
       "</template>\n",
+      "<script lang=\"ts\" setup></script>\n",
       "<style lang=\"scss\" scoped></style>",
       "$1"
     ],
